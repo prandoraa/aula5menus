@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Barra de navegação Animada</title>
+    <link rel="stylesheet" href="menu2.css">
+</head>
+
+<body>
+
+    <nav class="menu">
+        <div class="navcabecalho">Fechar <span>X</span></div>
+
+        <ul>
+            <li><a href="#;">HOME</a></li>
+            <li><a href="#;">SOBRE</a></li>
+            <li><a href="#;">CURSOS</a></li>
+            <li><a href="#;">SERVIÇOS</a></li>
+            <li><a href="#;">OUTROS</a></li>
+            <li><a href="#;">HISTÓRICO</a></li>
+            <li><a href="#;">DISCIPLINAS</a></li>
+            <li><a href="#;">CONTATO</a></li>
+            <li><a href="#;">SUGESTÕES</a></li>
+
+        </ul>
+        <div class="submenu"><button>Sub Menu</button></div>
+
+
+    </nav>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>    
+    
+    <script>
+        var links = $(".menu a, .menu .navcabecalho");
+        var TotalLinks = links.length;
+        var menulength = Math.ceil(TotalLinks / 3);
+        var menus = 0;
+        var i = 1;
+        $(".menu").css("--count", TotalLinks);
+
+        links.each(function(j) {
+            if (i > menulength) {
+                menus++;
+                i = 1;
+            }
+            $(this).attr("list-item", menus);
+            i++;
+
+        });
+
+
+        $(".menu .submenu button").on("click", function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            links.each(function(j) {
+                $(this).css('--top', $(this)[0].getBoundingClientRect().top + ($(this).attr('list-item') * -15) - 20);
+                $(this).css('--delay-in', j * .1 + 's');
+                $(this).css('--delay-out', (TotalLinks - j) * .1 + 's');
+            });
+
+            $(".menu").toggleClass("fecharmenu");
+
+
+        })
+    </script>
+
+
+</body>
+
+</html>

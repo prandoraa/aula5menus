@@ -1,0 +1,61 @@
+*{margin:0; padding: 0;}
+
+html{
+    /*esconder a barra de scroll*/
+    overflow: hidden;
+    /*tornar animação de scroll*/
+    scroll-behavior: smooth;
+}
+/*caso n funcione*/
+html::-webkit-scrollbar{
+    didplsy:none;
+}
+
+nav ul{
+    list-style: none;
+    align-items: center;
+    display: flex; /* mostra a lista horizontalmente diferente de verticalmente*/
+    gap: 1.5em; /*separa conteúdos entre contextos*/
+    position: fixed;
+    height: 2em;
+    background: linear-gradient(to left, #AAFF, #AAFF00);
+    width: 100vw;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5); 
+    /* ordem dos px da sombra - direita baixo blur*/
+    padding-left: 1em;
+}
+a{
+    text-decoration: none;
+    color: #000000;
+}
+/*a:visited{
+    color:rgb(140, 153, 218);
+}*/
+
+section{
+    min-height: 100vh;
+    padding-top: 2.5em;
+    padding-left: 1.5em;
+    color: white;
+}
+#ini{
+    background: url(imagem1.jpg);
+    background-size: cover; /*imagem tenta ocupar 100% da tela*/
+}
+#ser{
+    background: url(imagem2.jpg);
+    background-size: cover; /*imagem tenta ocupar 100% da tela*/
+}
+#con{
+    background: url(imagem3.jpg);
+    background-size: cover; /*imagem tenta ocupar 100% da tela*/
+}
+#cur{
+    background: url(imagem4.jpg);
+    background-size: cover; /*imagem tenta ocupar 100% da tela*/
+}
+#sob{
+    background: url(imagem5.jpg);
+    background-size: cover; /*imagem tenta ocupar 100% da tela*/
+}
+
